@@ -10,13 +10,13 @@
 #import "WZDetailViewController.h"
 
 #import "WZProduct.h"
+#import "WZTableViewCell.h"
 
 @interface WZMasterViewController () {
-    NSMutableArray *_objects;
+    
+    /// Local/Private NSMutableArray that will be loaded with WZProducts
+    NSMutableArray *_products;
 }
-
-/// Private property NSMutableArray that will be loaded with the mutableArray from WZProducts.
-@property (nonatomic, strong)NSMutableArray *products;
 
 @end
 
@@ -33,9 +33,9 @@
 {
     [super viewDidLoad];
     
-    /// Load private mutableArray with array from WZProducts
-    self.products = [WZProduct products];
-
+    /// Load local/private mutableArray with array from WZProducts
+    _products = [WZProduct products];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -52,10 +52,10 @@
 
 - (void)insertNewObject:(id)sender
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+    if (!_products) {
+        _products = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_products insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -69,22 +69,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return _objects.count;
-    return self.products.count;
+    return _products.count;
+    //return self.products.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-//    NSDate *object = _objects[indexPath.row];
-//    cell.textLabel.text = [object description];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
+    
+    /// Create instance of WZTableViewCell
+    WZTableViewCell *productCell = (WZTableViewCell *)cell;
     
     /// Create instance of WZProducts and set to the product at the current indexPath's row
-    WZProduct *currentProduct = [self.products objectAtIndex:indexPath.row];
+   WZProduct *currentProduct = [_products objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = currentProduct.name;
-    cell.detailTextLabel.text = currentProduct.number;
+    productCell.nameLabel.text = currentProduct.name;
+    productCell.numberLabel.text = currentProduct.number;
+    productCell.sizeLabel.text = currentProduct.size;
+    productCell.imageView.image = nil;
     
     return cell;
 }
@@ -98,7 +100,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [_products removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -123,8 +125,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+    WZProduct *product = _products[indexPath.row];
+    self.detailViewController.detailItem = product;
 }
 
 @end

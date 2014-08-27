@@ -26,6 +26,7 @@
 		C160598619AE1DF800ACF025 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C160598419AE1DF800ACF025 /* InfoPlist.strings */; };
 		C160598819AE1DF800ACF025 /* Locate_ProductsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C160598719AE1DF800ACF025 /* Locate_ProductsTests.m */; };
 		C160599319AE265600ACF025 /* WZProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = C160599219AE265600ACF025 /* WZProduct.m */; };
+		C19E99AD19AE58950050A433 /* WZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19E99AC19AE58950050A433 /* WZTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		C160598719AE1DF800ACF025 /* Locate_ProductsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Locate_ProductsTests.m; sourceTree = "<group>"; };
 		C160599119AE265600ACF025 /* WZProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZProduct.h; path = ../WZProduct.h; sourceTree = "<group>"; };
 		C160599219AE265600ACF025 /* WZProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZProduct.m; path = ../WZProduct.m; sourceTree = "<group>"; };
+		C19E99AB19AE58950050A433 /* WZTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTableViewCell.h; sourceTree = "<group>"; };
+		C19E99AC19AE58950050A433 /* WZTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +131,15 @@
 			children = (
 				C160599119AE265600ACF025 /* WZProduct.h */,
 				C160599219AE265600ACF025 /* WZProduct.m */,
-				C160596419AE1DF800ACF025 /* WZAppDelegate.h */,
-				C160596519AE1DF800ACF025 /* WZAppDelegate.m */,
-				C160596719AE1DF800ACF025 /* Main.storyboard */,
+				C19E99AB19AE58950050A433 /* WZTableViewCell.h */,
+				C19E99AC19AE58950050A433 /* WZTableViewCell.m */,
 				C160596D19AE1DF800ACF025 /* WZMasterViewController.h */,
 				C160596E19AE1DF800ACF025 /* WZMasterViewController.m */,
 				C160597019AE1DF800ACF025 /* WZDetailViewController.h */,
 				C160597119AE1DF800ACF025 /* WZDetailViewController.m */,
+				C160596419AE1DF800ACF025 /* WZAppDelegate.h */,
+				C160596519AE1DF800ACF025 /* WZAppDelegate.m */,
+				C160596719AE1DF800ACF025 /* Main.storyboard */,
 				C160597319AE1DF800ACF025 /* Images.xcassets */,
 				C160596A19AE1DF800ACF025 /* Locate_Products.xcdatamodeld */,
 				C160595C19AE1DF800ACF025 /* Supporting Files */,
@@ -274,6 +279,7 @@
 				C160597219AE1DF800ACF025 /* WZDetailViewController.m in Sources */,
 				C160596C19AE1DF800ACF025 /* Locate_Products.xcdatamodeld in Sources */,
 				C160599319AE265600ACF025 /* WZProduct.m in Sources */,
+				C19E99AD19AE58950050A433 /* WZTableViewCell.m in Sources */,
 				C160596F19AE1DF800ACF025 /* WZMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
