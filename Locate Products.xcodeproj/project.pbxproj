@@ -25,6 +25,7 @@
 		C160597E19AE1DF800ACF025 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C160595919AE1DF800ACF025 /* CoreData.framework */; };
 		C160598619AE1DF800ACF025 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C160598419AE1DF800ACF025 /* InfoPlist.strings */; };
 		C160598819AE1DF800ACF025 /* Locate_ProductsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C160598719AE1DF800ACF025 /* Locate_ProductsTests.m */; };
+		C160599319AE265600ACF025 /* WZProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = C160599219AE265600ACF025 /* WZProduct.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		C160598319AE1DF800ACF025 /* Locate ProductsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Locate ProductsTests-Info.plist"; sourceTree = "<group>"; };
 		C160598519AE1DF800ACF025 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C160598719AE1DF800ACF025 /* Locate_ProductsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Locate_ProductsTests.m; sourceTree = "<group>"; };
+		C160599119AE265600ACF025 /* WZProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZProduct.h; path = ../WZProduct.h; sourceTree = "<group>"; };
+		C160599219AE265600ACF025 /* WZProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZProduct.m; path = ../WZProduct.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		C160595B19AE1DF800ACF025 /* Locate Products */ = {
 			isa = PBXGroup;
 			children = (
+				C160599119AE265600ACF025 /* WZProduct.h */,
+				C160599219AE265600ACF025 /* WZProduct.m */,
 				C160596419AE1DF800ACF025 /* WZAppDelegate.h */,
 				C160596519AE1DF800ACF025 /* WZAppDelegate.m */,
 				C160596719AE1DF800ACF025 /* Main.storyboard */,
@@ -268,6 +273,7 @@
 				C160596619AE1DF800ACF025 /* WZAppDelegate.m in Sources */,
 				C160597219AE1DF800ACF025 /* WZDetailViewController.m in Sources */,
 				C160596C19AE1DF800ACF025 /* Locate_Products.xcdatamodeld in Sources */,
+				C160599319AE265600ACF025 /* WZProduct.m in Sources */,
 				C160596F19AE1DF800ACF025 /* WZMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +405,7 @@
 				GCC_PREFIX_HEADER = "Locate Products/Locate Products-Prefix.pch";
 				INFOPLIST_FILE = "Locate Products/Locate Products-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -412,6 +419,7 @@
 				GCC_PREFIX_HEADER = "Locate Products/Locate Products-Prefix.pch";
 				INFOPLIST_FILE = "Locate Products/Locate Products-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -475,6 +483,7 @@
 				C160598D19AE1DF800ACF025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C160598E19AE1DF800ACF025 /* Build configuration list for PBXNativeTarget "Locate ProductsTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +492,7 @@
 				C160599019AE1DF800ACF025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

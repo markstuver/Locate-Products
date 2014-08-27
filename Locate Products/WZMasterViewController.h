@@ -10,13 +10,8 @@
 
 @class WZDetailViewController;
 
-#import <CoreData/CoreData.h>
-
-@interface WZMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface WZMasterViewController : UITableViewController
 
 @property (strong, nonatomic) WZDetailViewController *detailViewController;
-
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
