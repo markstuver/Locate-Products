@@ -10,6 +10,7 @@
 
 @interface WZTableViewCell : UITableViewCell
 
+/// Custom Cell Outlets for the master tableView
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sizeLabel;

@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class WZDetailViewController;
+@class WZProduct;
+
 @interface WZLocationsTableViewController : UITableViewController
 
+/// Property that is passed item data from WZDetailVC
 @property (strong, nonatomic) id detailItem;
+
+
 
 @end

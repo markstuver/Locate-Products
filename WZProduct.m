@@ -11,6 +11,7 @@
 @implementation WZProduct
 
 
+/// Initializer that is called to create a product
 -(id)initWithProductName:(NSString *)name
                   number:(NSString *)number
                     description:(NSString *)description
@@ -38,7 +39,7 @@
 }
 
 
-
+/// /// Class Method that returns an array from the product data created for testing
 + (NSMutableArray *) products {
     
     WZProduct *sapphire = [[WZProduct alloc]initWithProductName:@"Sapphire" number:@"35-19061" description:@"Brass Vase" size:@"Adult" image:[UIImage imageNamed:@"35-19061_Saphire.png"] quantity:@20 warehouse:@"i" row:@1 section:@"a" vendor:@"Otto"];

@@ -21,16 +21,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     /// Call helper method to setup detail view
     [self configureView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Split view
@@ -50,7 +43,7 @@
 }
 
 
-#pragma mark - Managing the detail item
+#pragma mark - Helper Methods - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -69,14 +62,13 @@
 /// Helper method that links the products data to the Storyboard outlets.
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-    
+    /// if this is detailItem
     if (self.detailItem) {
         
-        /// Create instance of WZProduct and set to the passed item
-        WZProduct *currentProduct = self.detailItem;
+        /// Create instance of WZProduct and set to the passed item (current product)
+       WZProduct *currentProduct = self.detailItem;
         
-        
+        /// Set Outlet labels with the current product's data
         self.numberLabel.text = currentProduct.number;
         self.nameLabel.text = currentProduct.name;
         self.sizeLabel.text = currentProduct.size;
@@ -87,29 +79,32 @@
             /// ... show missing_image image
             self.productImageView.image = [UIImage imageNamed:@"missing_image.png"];
             
+        /// else...
         } else {
-            /// else... show product image
+            /// ...show product image
             self.productImageView.image = currentProduct.image;
         }
+        
+        /// Call Helper method to extend data to the embedded tableView
+        [self configureEmbeddedTableView];
     }
+    
+    /// refresh the view of the embedded tableView to reflect current item
+    [self.childViewControllers.lastObject loadView];
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    if ([sender isKindOfClass:[WZDetailViewController class]]) {
-//        
-//        if ([segue.destinationViewController isKindOfClass:[WZLocationsTableViewController class]]) {
-//            
-//            WZLocationsTableViewController *nextVC = segue.destinationViewController;
-//            
-//            WZProduct *currentProduct = self.detailItem;
-//            
-//            nextVC.detailItem = currentProduct;
-//        }
-//    }
-//    
-//}
 
-
+/// Helper method to update the item passed to the embedded tableView
+-(void)configureEmbeddedTableView {
+    
+    /// Create instance of the embedded tableView's VC and set it to the childVC
+    WZLocationsTableViewController *locationsVC = self.childViewControllers.lastObject;
+    
+    /// Create instance of WZProducts and set to the current item
+    WZProduct *currentProduct = self.detailItem;
+    
+    /// Set the embedded tableView's detailItem instance to equal the current item.
+   locationsVC.detailItem = currentProduct;
+}
 
 @end

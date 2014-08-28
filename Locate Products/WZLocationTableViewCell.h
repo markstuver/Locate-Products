@@ -10,6 +10,8 @@
 
 @interface WZLocationTableViewCell : UITableViewCell
 
+
+/// Custom Cell Outlets for the locations tableView
 @property (strong, nonatomic) IBOutlet UILabel *warehouseLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *sectionLabel;

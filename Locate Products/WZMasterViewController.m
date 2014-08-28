@@ -9,8 +9,6 @@
 #import "WZMasterViewController.h"
 #import "WZDetailViewController.h"
 
-#import "WZLocationsTableViewController.h"
-
 #import "WZProduct.h"
 #import "WZTableViewCell.h"
 
@@ -37,30 +35,32 @@
     
     /// Load local/private mutableArray with array from WZProducts
     _products = [WZProduct products];
-    
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+/// Sets up MasterTableView with edit and add item bar buttons
+/*    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
+    /// Show plus in button bar. When pressed call the insertNewObject method
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+        self.navigationItem.rightBarButtonItem = addButton; */
+    
+    /// Setting up the splitViewController feature
     self.detailViewController = (WZDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#warning Need to configured to add a new product??? maybe???
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_products) {
-        _products = [[NSMutableArray alloc] init];
-    }
-    [_products insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+/// Is Called to insert new object when plus in button bar is selected
+//- (void)insertNewObject:(id)sender
+//{
+//    /// if the array does not exsist... create it
+//    if (!_products) {
+//        _products = [[NSMutableArray alloc] init];
+//    }
+//    /// if/after array is created insert the new item into the array
+//    [_products insertObject:[NSDate date] atIndex:0];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
 
 #pragma mark - Table View
 
@@ -69,14 +69,15 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    /// return amount of rows based on count of items in the products array
     return _products.count;
-    //return self.products.count;
-}
+  }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
     
     /// Create instance of WZTableViewCell
@@ -91,24 +92,36 @@
     
     /// if the current product image is set to nil..
     if (currentProduct.image == nil) {
-        /// show missing_image image
+        /// show missing_image
         productCell.productImageView.image = [UIImage imageNamed:@"missing_image.png"];
 
     } else {
         /// else... show the current product's image
         productCell.productImageView.image = currentProduct.image;
     }
-    
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+/// When row has been selected... send that row's item to the detailItem property of the detailVC
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    /// Create instance of WZProducts and set to the row's item from the product array
+    WZProduct *product = _products[indexPath.row];
+    
+    /// Send the product instance from this VC to the detailItem property in the detailVC
+    self.detailViewController.detailItem = product;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+
+/// Used to tell tableView that can allow its rows to be edited
+/* - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   // Return NO if you do not want the specified item to be editable.
+    return YES;
+} */
+
+/// Used when allowing for edit and add buttons to be active in the buttonBar
+/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_products removeObjectAtIndex:indexPath.row];
@@ -116,29 +129,6 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
-}
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    WZProduct *product = _products[indexPath.row];
-    self.detailViewController.detailItem = product;
-    self.locationsTableViewController.detailItem = product;
-}
+} */
 
 @end
