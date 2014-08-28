@@ -7,6 +7,8 @@
 //
 
 #import "WZDetailViewController.h"
+#import "WZProduct.h"
+#import "WZLocationsTableViewController.h"
 
 @interface WZDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -70,8 +72,44 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-        //self.detailDescriptionLabel.text = [self.detailItem name];
+        
+        /// Create instance of WZProduct and set to the passed item
+        WZProduct *currentProduct = self.detailItem;
+        
+        
+        self.numberLabel.text = currentProduct.number;
+        self.nameLabel.text = currentProduct.name;
+        self.sizeLabel.text = currentProduct.size;
+        self.descriptionLabel.text = currentProduct.description;
+        
+        /// if the product image is nil...
+        if (currentProduct.image == nil) {
+            /// ... show missing_image image
+            self.productImageView.image = [UIImage imageNamed:@"missing_image.png"];
+            
+        } else {
+            /// else... show product image
+            self.productImageView.image = currentProduct.image;
+        }
     }
 }
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    if ([sender isKindOfClass:[WZDetailViewController class]]) {
+//        
+//        if ([segue.destinationViewController isKindOfClass:[WZLocationsTableViewController class]]) {
+//            
+//            WZLocationsTableViewController *nextVC = segue.destinationViewController;
+//            
+//            WZProduct *currentProduct = self.detailItem;
+//            
+//            nextVC.detailItem = currentProduct;
+//        }
+//    }
+//    
+//}
+
+
 
 @end

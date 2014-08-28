@@ -9,6 +9,8 @@
 #import "WZMasterViewController.h"
 #import "WZDetailViewController.h"
 
+#import "WZLocationsTableViewController.h"
+
 #import "WZProduct.h"
 #import "WZTableViewCell.h"
 
@@ -86,7 +88,16 @@
     productCell.nameLabel.text = currentProduct.name;
     productCell.numberLabel.text = currentProduct.number;
     productCell.sizeLabel.text = currentProduct.size;
-    productCell.imageView.image = nil;
+    
+    /// if the current product image is set to nil..
+    if (currentProduct.image == nil) {
+        /// show missing_image image
+        productCell.productImageView.image = [UIImage imageNamed:@"missing_image.png"];
+
+    } else {
+        /// else... show the current product's image
+        productCell.productImageView.image = currentProduct.image;
+    }
     
     return cell;
 }
@@ -127,6 +138,7 @@
 {
     WZProduct *product = _products[indexPath.row];
     self.detailViewController.detailItem = product;
+    self.locationsTableViewController.detailItem = product;
 }
 
 @end

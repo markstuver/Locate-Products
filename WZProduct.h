@@ -13,14 +13,20 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *number;
-@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *size;
-@property (nonatomic) int quantity;
+@property (nonatomic, strong) NSNumber *quantity;
 @property (nonatomic, strong) UIImage *image;
-@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSString *warehouse;
+@property (nonatomic, strong) NSNumber *row;
+@property (nonatomic, strong) NSString *section;
+@property (nonatomic, strong) NSString *vendor;
+
+
+
 
 /// Initializer for creating a Product
--(id)initWithProductName:(NSString *)name number:(NSString *)number type:(NSString *)type size:(NSString *)size image:(UIImage *)image quantity:(int)quantity location:(NSString *)location;
+-(id)initWithProductName:(NSString *)name number:(NSString *)number description:(NSString *)description size:(NSString *)size image:(UIImage *)image quantity:(NSNumber *)quantity warehouse:(NSString *)warehouse row:(NSNumber *)row section:(NSString *)section vendor:(NSString *)vendor;
 
 + (NSMutableArray *) products;
 

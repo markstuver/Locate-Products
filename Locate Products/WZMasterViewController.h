@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class WZDetailViewController;
+@class WZLocationsTableViewController;
 
 @interface WZMasterViewController : UITableViewController
 
 @property (strong, nonatomic) WZDetailViewController *detailViewController;
+@property (strong, nonatomic) WZLocationsTableViewController *locationsTableViewController;
 
 @end

@@ -13,5 +13,14 @@
 @property (strong, nonatomic) id detailItem;
 
 
+@property (strong, nonatomic) IBOutlet UILabel *numberLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *sizeLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 
 @end

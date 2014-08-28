@@ -1,14 +1,14 @@
 //
-//  WZTableViewCell.m
+//  WZLocationTableViewCell.m
 //  Locate Products
 //
 //  Created by Mark Stuver on 8/27/14.
 //  Copyright (c) 2014 Wartz Studio. All rights reserved.
 //
 
-#import "WZTableViewCell.h"
+#import "WZLocationTableViewCell.h"
 
-@implementation WZTableViewCell
+@implementation WZLocationTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -16,7 +16,6 @@
     if (self) {
         // Initialization code
     }
-    
     return self;
 }
 
