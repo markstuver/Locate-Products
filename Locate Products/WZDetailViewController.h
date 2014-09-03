@@ -18,9 +18,19 @@
 
 /// Outlets for labels in detail view
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *sizeLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *capacityLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *mainVendorLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *countryOriginLabel;
+
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 
 @end

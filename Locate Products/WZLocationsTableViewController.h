@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class WZDetailViewController;
-@class WZProduct;
+;
 
 @interface WZLocationsTableViewController : UITableViewController
 

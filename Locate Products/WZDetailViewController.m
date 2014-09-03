@@ -71,8 +71,13 @@
         /// Set Outlet labels with the current product's data
         self.numberLabel.text = currentProduct.number;
         self.nameLabel.text = currentProduct.name;
-        self.sizeLabel.text = currentProduct.size;
         self.descriptionLabel.text = currentProduct.description;
+        self.sizeLabel.text = currentProduct.size;
+        self.capacityLabel.text = [NSString stringWithFormat:@"%i", currentProduct.capacity];
+        self.mainVendorLabel.text = currentProduct.vendor;
+        self.countryOriginLabel.text = currentProduct.country;
+    
+        
         
         /// if the product image is nil...
         if (currentProduct.image == nil) {

@@ -35,6 +35,7 @@
 		C19E31F319AEAC20007B2C86 /* WZLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19E31F219AEAC20007B2C86 /* WZLocationTableViewCell.m */; };
 		C19E320519AEC3A5007B2C86 /* WZLocationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C19E320419AEC3A5007B2C86 /* WZLocationsTableViewController.m */; };
 		C19E99AD19AE58950050A433 /* WZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19E99AC19AE58950050A433 /* WZTableViewCell.m */; };
+		C1D9534A19B103C100DB149C /* WZLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D9534919B103C100DB149C /* WZLocationDetailViewController.m */; };
 		C1F95BE619AFAAC500C4F662 /* WZLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F95BE519AFAAC500C4F662 /* WZLocations.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		C19E320419AEC3A5007B2C86 /* WZLocationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLocationsTableViewController.m; sourceTree = "<group>"; };
 		C19E99AB19AE58950050A433 /* WZTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTableViewCell.h; sourceTree = "<group>"; };
 		C19E99AC19AE58950050A433 /* WZTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTableViewCell.m; sourceTree = "<group>"; };
+		C1D9534819B103C100DB149C /* WZLocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLocationDetailViewController.h; sourceTree = "<group>"; };
+		C1D9534919B103C100DB149C /* WZLocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLocationDetailViewController.m; sourceTree = "<group>"; };
 		C1F95BE419AFAAC500C4F662 /* WZLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLocations.h; sourceTree = "<group>"; };
 		C1F95BE519AFAAC500C4F662 /* WZLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLocations.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,20 +153,12 @@
 		C160595B19AE1DF800ACF025 /* Locate Products */ = {
 			isa = PBXGroup;
 			children = (
-				C160599119AE265600ACF025 /* WZProduct.h */,
-				C160599219AE265600ACF025 /* WZProduct.m */,
-				C1F95BE419AFAAC500C4F662 /* WZLocations.h */,
-				C1F95BE519AFAAC500C4F662 /* WZLocations.m */,
 				C19E99AB19AE58950050A433 /* WZTableViewCell.h */,
 				C19E99AC19AE58950050A433 /* WZTableViewCell.m */,
 				C19E31F119AEAC20007B2C86 /* WZLocationTableViewCell.h */,
 				C19E31F219AEAC20007B2C86 /* WZLocationTableViewCell.m */,
-				C160596D19AE1DF800ACF025 /* WZMasterViewController.h */,
-				C160596E19AE1DF800ACF025 /* WZMasterViewController.m */,
-				C160597019AE1DF800ACF025 /* WZDetailViewController.h */,
-				C160597119AE1DF800ACF025 /* WZDetailViewController.m */,
-				C19E320319AEC3A5007B2C86 /* WZLocationsTableViewController.h */,
-				C19E320419AEC3A5007B2C86 /* WZLocationsTableViewController.m */,
+				C1D9534C19B103F200DB149C /* View Controllers */,
+				C1D9534B19B103D000DB149C /* Models */,
 				C160596419AE1DF800ACF025 /* WZAppDelegate.h */,
 				C160596519AE1DF800ACF025 /* WZAppDelegate.m */,
 				C160596719AE1DF800ACF025 /* Main.storyboard */,
@@ -215,6 +210,32 @@
 				C19E31EB19AEA940007B2C86 /* 35-19069_Zeus.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		C1D9534B19B103D000DB149C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C160599119AE265600ACF025 /* WZProduct.h */,
+				C160599219AE265600ACF025 /* WZProduct.m */,
+				C1F95BE419AFAAC500C4F662 /* WZLocations.h */,
+				C1F95BE519AFAAC500C4F662 /* WZLocations.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C1D9534C19B103F200DB149C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C160596D19AE1DF800ACF025 /* WZMasterViewController.h */,
+				C160596E19AE1DF800ACF025 /* WZMasterViewController.m */,
+				C160597019AE1DF800ACF025 /* WZDetailViewController.h */,
+				C160597119AE1DF800ACF025 /* WZDetailViewController.m */,
+				C19E320319AEC3A5007B2C86 /* WZLocationsTableViewController.h */,
+				C19E320419AEC3A5007B2C86 /* WZLocationsTableViewController.m */,
+				C1D9534819B103C100DB149C /* WZLocationDetailViewController.h */,
+				C1D9534919B103C100DB149C /* WZLocationDetailViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +345,7 @@
 				C160596219AE1DF800ACF025 /* main.m in Sources */,
 				C19E31F319AEAC20007B2C86 /* WZLocationTableViewCell.m in Sources */,
 				C160596619AE1DF800ACF025 /* WZAppDelegate.m in Sources */,
+				C1D9534A19B103C100DB149C /* WZLocationDetailViewController.m in Sources */,
 				C19E320519AEC3A5007B2C86 /* WZLocationsTableViewController.m in Sources */,
 				C160597219AE1DF800ACF025 /* WZDetailViewController.m in Sources */,
 				C160596C19AE1DF800ACF025 /* Locate_Products.xcdatamodeld in Sources */,
