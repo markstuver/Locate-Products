@@ -35,6 +35,9 @@
 {
     [super viewDidLoad];
     
+    WZProduct *currentProduct = self.detailItem;
+    NSLog(@"TableView received: %@", currentProduct.name);
+    
     _locations = [WZLocations locations];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -54,12 +57,6 @@
     return 1;
 }
 
-
-/// Section Title For Header
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    return @"Product Locations";
-}
 
 
 /// Call Method to set the height of the current row

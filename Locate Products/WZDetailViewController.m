@@ -9,6 +9,7 @@
 #import "WZDetailViewController.h"
 #import "WZProduct.h"
 #import "WZLocationsTableViewController.h"
+#import "WZLocationsNavigationController.h"
 
 @interface WZDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -90,26 +91,45 @@
             self.productImageView.image = currentProduct.image;
         }
         
-        /// Call Helper method to extend data to the embedded tableView
-        [self configureEmbeddedTableView];
+        /// Call Helper method to extend data to the embedded NavigationController
+        [self configureEmbeddedController];
     }
     
+    
     /// refresh the view of the embedded tableView to reflect current item
-    [self.childViewControllers.lastObject loadView];
+    [self.childViewControllers.firstObject loadView];
 }
 
 
 /// Helper method to update the item passed to the embedded tableView
--(void)configureEmbeddedTableView {
+-(void)configureEmbeddedController {
     
-    /// Create instance of the embedded tableView's VC and set it to the childVC
-    WZLocationsTableViewController *locationsVC = self.childViewControllers.lastObject;
+    /// Create instance of the embedded navigationController and set it to the childVC
+    WZLocationsNavigationController *navVC = self.childViewControllers.lastObject;
+
+
     
-    /// Create instance of WZProducts and set to the current item
+       /// Create instance of WZProducts and set to the current item
     WZProduct *currentProduct = self.detailItem;
+    NSLog(@"DetailVC received: %@", currentProduct.name);
     
-    /// Set the embedded tableView's detailItem instance to equal the current item.
-   locationsVC.detailItem = currentProduct;
+        
+    
+    
+    /// Set the embedded navigationController's detailItem instance to equal the current item.
+    
+    navVC.detailItem = self.detailItem;
+    
+   // NSLog(@"Info sent to NavigationController: %@", currentProduct.name);
+    
+    NSLog(@"children : %@", navVC);
+    
+    WZProduct *currentProductToPass = navVC.detailItem;
+
+    NSLog(@"child's data passed: %@", currentProductToPass.name);
+    
+        //[locationVC.tableView reloadData];
 }
+
 
 @end

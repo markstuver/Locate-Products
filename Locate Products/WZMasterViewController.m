@@ -8,6 +8,8 @@
 
 #import "WZMasterViewController.h"
 #import "WZDetailViewController.h"
+#import "WZLocationsNavigationController.h"
+#import "WZLocationsTableViewController.h"
 
 #import "WZProduct.h"
 #import "WZTableViewCell.h"
@@ -110,7 +112,21 @@
     
     /// Send the product instance from this VC to the detailItem property in the detailVC
     self.detailViewController.detailItem = product;
-}
+    
+    WZLocationsNavigationController *navVC = self.detailViewController.childViewControllers.lastObject;
+    
+    
+     NSLog(@"children from master : %@", navVC);
+    
+    navVC.detailItem = product;
+    
+    NSLog(@"child's contents: %@", product.name);
+    
+
+    [navVC viewDidLoad];
+    
+    }
+
 
 
 /// Used to tell tableView that can allow its rows to be edited

@@ -33,4 +33,5 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 @end

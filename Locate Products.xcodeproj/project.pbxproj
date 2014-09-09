@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A69B0D719BE94E20038C8EE /* WZLocationsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A69B0D619BE94E20038C8EE /* WZLocationsNavigationController.m */; };
+		9A69B0E019BEB9560038C8EE /* WZContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A69B0DF19BEB9560038C8EE /* WZContainerView.m */; };
 		C160595419AE1DF800ACF025 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C160595319AE1DF800ACF025 /* Foundation.framework */; };
 		C160595619AE1DF800ACF025 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C160595519AE1DF800ACF025 /* CoreGraphics.framework */; };
 		C160595819AE1DF800ACF025 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C160595719AE1DF800ACF025 /* UIKit.framework */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A69B0D519BE94E20038C8EE /* WZLocationsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLocationsNavigationController.h; sourceTree = "<group>"; };
+		9A69B0D619BE94E20038C8EE /* WZLocationsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZLocationsNavigationController.m; sourceTree = "<group>"; };
+		9A69B0DE19BEB9560038C8EE /* WZContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZContainerView.h; sourceTree = "<group>"; };
+		9A69B0DF19BEB9560038C8EE /* WZContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZContainerView.m; sourceTree = "<group>"; };
 		C160595019AE1DF800ACF025 /* Locate Products.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Locate Products.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C160595319AE1DF800ACF025 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C160595519AE1DF800ACF025 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -153,15 +159,17 @@
 		C160595B19AE1DF800ACF025 /* Locate Products */ = {
 			isa = PBXGroup;
 			children = (
+				C160596419AE1DF800ACF025 /* WZAppDelegate.h */,
+				C160596519AE1DF800ACF025 /* WZAppDelegate.m */,
 				C19E99AB19AE58950050A433 /* WZTableViewCell.h */,
 				C19E99AC19AE58950050A433 /* WZTableViewCell.m */,
 				C19E31F119AEAC20007B2C86 /* WZLocationTableViewCell.h */,
 				C19E31F219AEAC20007B2C86 /* WZLocationTableViewCell.m */,
 				C1D9534C19B103F200DB149C /* View Controllers */,
 				C1D9534B19B103D000DB149C /* Models */,
-				C160596419AE1DF800ACF025 /* WZAppDelegate.h */,
-				C160596519AE1DF800ACF025 /* WZAppDelegate.m */,
 				C160596719AE1DF800ACF025 /* Main.storyboard */,
+				9A69B0DE19BEB9560038C8EE /* WZContainerView.h */,
+				9A69B0DF19BEB9560038C8EE /* WZContainerView.m */,
 				C160597319AE1DF800ACF025 /* Images.xcassets */,
 				C160596A19AE1DF800ACF025 /* Locate_Products.xcdatamodeld */,
 				C19E31F019AEA948007B2C86 /* images */,
@@ -230,6 +238,8 @@
 				C160596E19AE1DF800ACF025 /* WZMasterViewController.m */,
 				C160597019AE1DF800ACF025 /* WZDetailViewController.h */,
 				C160597119AE1DF800ACF025 /* WZDetailViewController.m */,
+				9A69B0D519BE94E20038C8EE /* WZLocationsNavigationController.h */,
+				9A69B0D619BE94E20038C8EE /* WZLocationsNavigationController.m */,
 				C19E320319AEC3A5007B2C86 /* WZLocationsTableViewController.h */,
 				C19E320419AEC3A5007B2C86 /* WZLocationsTableViewController.m */,
 				C1D9534819B103C100DB149C /* WZLocationDetailViewController.h */,
@@ -344,11 +354,13 @@
 			files = (
 				C160596219AE1DF800ACF025 /* main.m in Sources */,
 				C19E31F319AEAC20007B2C86 /* WZLocationTableViewCell.m in Sources */,
+				9A69B0E019BEB9560038C8EE /* WZContainerView.m in Sources */,
 				C160596619AE1DF800ACF025 /* WZAppDelegate.m in Sources */,
 				C1D9534A19B103C100DB149C /* WZLocationDetailViewController.m in Sources */,
 				C19E320519AEC3A5007B2C86 /* WZLocationsTableViewController.m in Sources */,
 				C160597219AE1DF800ACF025 /* WZDetailViewController.m in Sources */,
 				C160596C19AE1DF800ACF025 /* Locate_Products.xcdatamodeld in Sources */,
+				9A69B0D719BE94E20038C8EE /* WZLocationsNavigationController.m in Sources */,
 				C160599319AE265600ACF025 /* WZProduct.m in Sources */,
 				C1F95BE619AFAAC500C4F662 /* WZLocations.m in Sources */,
 				C19E99AD19AE58950050A433 /* WZTableViewCell.m in Sources */,
