@@ -72,7 +72,7 @@
         /// Set Outlet labels with the current product's data
         self.numberLabel.text = currentProduct.number;
         self.nameLabel.text = currentProduct.name;
-        self.descriptionLabel.text = currentProduct.description;
+        self.descriptionLabel.text = currentProduct.productDescription;
         self.sizeLabel.text = currentProduct.size;
         self.capacityLabel.text = [NSString stringWithFormat:@"%i", currentProduct.capacity];
         self.mainVendorLabel.text = currentProduct.vendor;

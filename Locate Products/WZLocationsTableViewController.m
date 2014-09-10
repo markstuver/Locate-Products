@@ -136,9 +136,12 @@
         
         WZLocationDetailViewController *locationDetailVC = segue.destinationViewController;
         
-        ///WZProduct *currentProduct = self.detailItem;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        locationDetailVC.locationItem = [_locations objectAtIndex:indexPath.row];
         
         locationDetailVC.detailItem = self.detailItem;
+
     
     }
     

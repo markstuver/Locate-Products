@@ -113,6 +113,8 @@
     /// Send the product instance from this VC to the detailItem property in the detailVC
     self.detailViewController.detailItem = product;
     
+    self.detailViewController.title = [NSString stringWithFormat: @"%@ %@ Details",[product number], [product name]];
+    
     WZLocationsNavigationController *navVC = self.detailViewController.childViewControllers.lastObject;
     
     

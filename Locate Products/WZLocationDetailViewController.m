@@ -8,6 +8,7 @@
 
 #import "WZLocationDetailViewController.h"
 #import "WZProduct.h"
+#import "WZLocations.h"
 
 @interface WZLocationDetailViewController ()
 
@@ -36,13 +37,21 @@
 
 -(void)ConfigureView {
     
-    if (self.detailItem) {
+    if (self.detailItem && self.locationItem) {
         
         WZProduct *currentProduct = self.detailItem;
+        WZLocations *currentLocation = self.locationItem;
+       
+        self.productName.text = currentProduct.name;
+        self.productNumber.text = currentProduct.number;
+        self.warehouse.text = currentLocation.warehouse;
+        self.rowLabel.text = currentLocation.row.stringValue;
+        self.sectionLabel.text = currentLocation.section;
+        self.quantity.text = currentLocation.quantity.stringValue;
+        self.vendorLabel.text = currentLocation.vendor;
         
-       // self.productName.text = currentProduct.name;
-       // self.warehouse.text = currentProduct.warehouse;
-       // self.quantity.text = currentProduct.quantity.stringValue;
+        self.locationDetailPhoto.image = [UIImage imageNamed:@"missing_image"];
+        
     }
     
     
@@ -50,7 +59,7 @@
 }
 
 /* For COMMIT EDITING STYLE FOR ROW - TABLEVIEW - ***REQUIRED FOR EDITING MODE*** **/
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+////- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // DELETING ROWS
     // Make sure we are grabbing the EditingStyleDELETE
@@ -68,18 +77,18 @@
     // }
         /// INSERTING ROWS
         // Make sure we are grabbing the EditingStyleINSERT
-     /*else*/ if (editingStyle == UITableViewCellEditingStyleInsert) {
+     /*else*/ ///if (editingStyle == UITableViewCellEditingStyleInsert) {
         
         // Create instance of WZProducts and set to the current IndexPath's row
-        WZProduct *currentProduct = self.detailItem[indexPath.row];
+       /// WZProduct *currentProduct = self.detailItem[indexPath.row];
         
         // Add new row object to the array
       //  [section.bugs addObject:newBug];
         
         // Animate the row and insert
-        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
-}
+        ///[tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  ///  }
+///}
 
 
 
